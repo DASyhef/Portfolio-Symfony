@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Paragraf{% endblock %}
+
+{% block body %}
+    <h1>Edit Paragraf</h1>
+
+    {{ include('paragraf/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_paragraf_index') }}">back to list</a>
+
+    {{ include('paragraf/_delete_form.html.twig') }}
+{% endblock %}

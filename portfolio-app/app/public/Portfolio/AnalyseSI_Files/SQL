@@ -1,0 +1,52 @@
+DROP TABLE IF EXISTS Projects ;
+CREATE TABLE Projects (ID_Project INT AUTO_INCREMENT NOT NULL,
+Project_Description VARCHAR,
+Project_Name VARCHAR,
+Project_IMG BLOB,
+PRIMARY KEY (ID_Project)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Skills ;
+CREATE TABLE Skills (ID_Skills INT AUTO_INCREMENT NOT NULL,
+Skill_Description VARCHAR,
+Skill_Name VARCHAR,
+Skill_IMG BLOB,
+PRIMARY KEY (ID_Skills)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Knownledge ;
+CREATE TABLE Knownledge (ID_Knowledge INT AUTO_INCREMENT NOT NULL,
+Knowledge_Desccrition VARCHAR,
+Knowledge_Name VARCHAR,
+PRIMARY KEY (ID_Knowledge)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS User ;
+CREATE TABLE User (ID_User INT AUTO_INCREMENT NOT NULL,
+User_Name VARCHAR,
+User_Firstname VARCHAR,
+User_Role_User VARCHAR,
+PRIMARY KEY (ID_User)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS User_s_Knowledge ;
+CREATE TABLE User_s_Knowledge (ID_User **NOT FOUND** AUTO_INCREMENT NOT NULL,
+ID_Knowledge **NOT FOUND** NOT NULL,
+PRIMARY KEY (ID_User,
+ ID_Knowledge)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS User_s_Skills ;
+CREATE TABLE User_s_Skills (ID_User **NOT FOUND** AUTO_INCREMENT NOT NULL,
+ID_Skills **NOT FOUND** NOT NULL,
+PRIMARY KEY (ID_User,
+ ID_Skills)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS User_s_Projects ;
+CREATE TABLE User_s_Projects (ID_User **NOT FOUND** AUTO_INCREMENT NOT NULL,
+ID_Project **NOT FOUND** NOT NULL,
+PRIMARY KEY (ID_User,
+ ID_Project)) ENGINE=InnoDB;
+
+ALTER TABLE User_s_Knowledge ADD CONSTRAINT FK_User_s_Knowledge_ID_User FOREIGN KEY (ID_User) REFERENCES User (ID_User);
+
+ALTER TABLE User_s_Knowledge ADD CONSTRAINT FK_User_s_Knowledge_ID_Knowledge FOREIGN KEY (ID_Knowledge) REFERENCES Knownledge (ID_Knowledge);
+ALTER TABLE User_s_Skills ADD CONSTRAINT FK_User_s_Skills_ID_User FOREIGN KEY (ID_User) REFERENCES User (ID_User);
+ALTER TABLE User_s_Skills ADD CONSTRAINT FK_User_s_Skills_ID_Skills FOREIGN KEY (ID_Skills) REFERENCES Skills (ID_Skills);
+ALTER TABLE User_s_Projects ADD CONSTRAINT FK_User_s_Projects_ID_User FOREIGN KEY (ID_User) REFERENCES User (ID_User);
+ALTER TABLE User_s_Projects ADD CONSTRAINT FK_User_s_Projects_ID_Project FOREIGN KEY (ID_Project) REFERENCES Projects (ID_Project);

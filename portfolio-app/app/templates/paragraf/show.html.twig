@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paragraf{% endblock %}
+
+{% block body %}
+    <h1>Paragraf</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ paragraf.id }}</td>
+            </tr>
+            <tr>
+                <th>Paragraf</th>
+                <td>{{ paragraf.paragraf }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_paragraf_index') }}">back to list</a>
+
+    <a href="{{ path('app_paragraf_edit', {'id': paragraf.id}) }}">edit</a>
+
+    {{ include('paragraf/_delete_form.html.twig') }}
+{% endblock %}

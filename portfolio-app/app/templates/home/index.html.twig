@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Das PortFolio{% endblock %}
+
+{% block body %}
+<style>
+{#
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+#}
+.home { background-image: url("{{ asset('Portfolio/BG/1493543.jpg') }}"); width: 100%; height: 100vh; display:flex; text-align: center; color: white; align-items: center; justify-content: center}
+</style>
+{#
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/var/www/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/var/www/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul>
+</div>
+
+#}
+
+
+<div class="home" style>
+    <div>
+    <h1>Cédric FRANÇOIS</h1>
+    <h2>Développeur Web Full Stack</h2>
+
+     {% for paragraf in paragrafs %}
+        <li>{{ paragraf.paragraf }}</li>
+    {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

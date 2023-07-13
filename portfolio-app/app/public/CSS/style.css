@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 3px 3px 3px black;
+    font-size: 5vh;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+
+}
+
+h2 {
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 3px 3px 3px black;
+    margin-top: 25px;
+    margin-left: 250px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+@media (min-width:768px) {
+
+
+}
+
+@media (min-width:1280px) {
+
+}
