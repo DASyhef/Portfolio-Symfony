@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('Portfolio/icons/Curhusky-Logo-Small.png') }}">
+        <link rel="icon" href="{{ asset('build/Portfolio/icons/Curhusky-Logo-Small.png') }}">
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
 
-        <link href="{{ asset('CSS/style.css') }}" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
         {% endblock %}
 
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
         
         {% block body %}{% endblock %}
-        <script src="./your-path/fancy-webgl-sparkles.js"></script>
     </body>
 </html>
