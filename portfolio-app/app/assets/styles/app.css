@@ -7,6 +7,86 @@ body {
     padding: 0;
 }
 
+.navcontainer {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round {
+    border-radius: 50%;
+    background-color: black;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    z-index: 10;
+    display:flex;
+    align-items: center;
+    justify-content: center ;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.64);
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.round:hover {
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+#tree {
+    width: 80%;
+}
+
+.rect {
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 30px;
+    border: solid 1px rgba(255, 255, 255, 0.527);
+    background-color: rgba(0, 0, 0, 0.692);
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.64);
+    width: 60%;
+    height: 60%;
+    font-family: 'Indie Flower', cursive;
+}
+
+.on {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.off {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.rect>a {
+    color: white;
+    margin: 30px;
+    font-size: 40px;
+    transform: scale(1);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.rect>a:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.rect>hr {
+    width: 50%;
+    height: 2px;
+    color: rgba(255, 255, 255, 0.726);
+}
+
 .home {
     background-position: center;
     background-size: cover;
@@ -30,11 +110,64 @@ h2 {
     -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
-@media (min-width:768px) {
+footer {
+    height:100px;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    display:flex;
+    flex-direction: row;
+    font-family: 'Indie Flower', cursive;
+    font-size: 2vh;
+    color: white;    
+}
 
+.footext {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.imgfooter {
+    width: 50px;
+    height:60px;
+    background-size: cover;
+    background-position: center;
+    margin-left: 10px;
+}
+
+.map {
+    width: 100%;
+    height: 50vh;
+}
+
+.map>iframe {
+    width: 100%;
+    height: 50vh;
+}
+
+.projects {
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+@media (min-width:768px) {
+    .round {
+        width: 75px;
+        height: 75px;
+    }
 
 }
 
 @media (min-width:1280px) {
-
+    .round {
+        width: 100px;
+        height: 100px;
+    }
 }

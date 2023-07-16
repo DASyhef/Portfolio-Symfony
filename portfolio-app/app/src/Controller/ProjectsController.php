@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class NavbarController extends AbstractController
+class ProjectsController extends AbstractController
 {
-    #[Route('/navbar', name: 'app_navbar')]
+    #[Route('/projects', name: 'app_projects')]
     public function index(): Response
     {
-        return $this->render('navbar/index.html.twig', [
-            'controller_name' => 'NavbarController',
+        return $this->render('projects/index.html.twig', [
+            'controller_name' => 'ProjectsController',
         ]);
     }
 }
