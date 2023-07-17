@@ -22,17 +22,23 @@
 #}
 
 <style>
-.skills { background: linear-gradient(to bottom, #ccc 0%, #fff 100%);}
+.skills { background: linear-gradient(to top left, #bbb 0%, #fff 100%);}
 </style>
 
 
-<div class="skills" id="Skills">
-    <h1 class="title">Compétences</h1>
-
-    <div class="links">
+<section class="skills" id="Skills">
+    <h1 class="title special">Compétences</h1>
+<div class="links">
+    <div class="skillscontainer">
         {% for paragraf in paragrafs %}
             <div class="divskills">{{ paragraf.paragraf }}</div>
         {% endfor %}
     </div> 
-</div>
+     <div class="skillscontainer">
+        {% for paragraf in paragrafs %}
+            <div class="divskills">{{ paragraf.paragraf }}</div>
+        {% endfor %}
+    </div> 
+    </div>
+</section>
 {% endblock %}
