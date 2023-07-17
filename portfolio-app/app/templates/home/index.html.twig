@@ -32,9 +32,11 @@
 {#     {% for paragraf in paragrafs %}
         <li>{{ paragraf.paragraf }}</li>
     {% endfor %}
-#}    
+    #}
     </div>
 </div>
 
-
+{% include 'Map/index.html.twig' %}
+{% include 'projects/index.html.twig' %}
+{% include 'skills/index.html.twig' %}
 {% endblock %}

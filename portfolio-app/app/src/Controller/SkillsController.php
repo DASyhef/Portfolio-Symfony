@@ -8,21 +8,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class SkillsController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/skills', name: 'app_skills')]
     public function index(ParagrafRepository $paragrafRepository
-        ): Response
+    ): Response
     {
 
         $presentations = $paragrafRepository->findAll();
 //        dd($presentations);
-
- //       $lorem = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi harum iste vero nihil quas sed sapiente exercitationem ea explicabo et magni fugit ipsum est repellendus similique rem, ipsa hic adipisci?";
-      return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+        
+        return $this->render('skills/index.html.twig', [
+            'controller_name' => 'SkillsController',
             'paragrafs' => $presentations
- //           'lorem' => $lorem
         ]);
     }
 }

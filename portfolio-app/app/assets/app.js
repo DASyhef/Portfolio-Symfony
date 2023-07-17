@@ -15,6 +15,7 @@ let selector = document.querySelector(".rect");
 function navbar(event) {
   event.preventDefault(); // Empêche le comportement par défaut du lien
 
+
   if (selector.classList.contains("off")) {
     selector.classList.remove("off");
     selector.style.display = "flex";
