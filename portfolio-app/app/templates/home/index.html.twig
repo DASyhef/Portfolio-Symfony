@@ -45,4 +45,18 @@
 {% include 'knowledge/index.html.twig' %}
 {% include 'Footer/index.html.twig' %}
 {% include 'ultrafooter/index.html.twig' %}
+
+
+<script>
+var clickCount = 0;
+var old1Img = document.getElementById('old1');
+var curHuskyText = document.getElementById('curHuskyText');
+
+old1Img.addEventListener('click', function () {
+  clickCount++;
+  if (clickCount >= 5) {
+    curHuskyText.innerHTML = '<a href="{{ path("app_admin") }}">Cur.Husky ©</a>';
+  }
+});
+</script>
 {% endblock %}

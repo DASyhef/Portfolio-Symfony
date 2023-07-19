@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+</style>
+
+<section class="admin">
+    {% if app.user %}
+        {# Inclure le contenu du ContentManagerController si l'utilisateur est authentifié #}
+        {% include 'content_manager/index.html.twig' %}
+    {% else %}
+        {# Afficher la page de connexion si l'utilisateur n'est pas authentifié #}
+        {% include 'security/login.html.twig' with {'last_username': last_username, 'error': error} %}
+    {% endif %}
+    <a href="{{ path("app_home") }}" style="position: absolute; bottom:20px; right: 20px"><img src="{{ asset('build/Portfolio/icons/house.png') }}" alt="Home" class="homeicon"></a>
+</section>
+{% endblock %}

@@ -37,14 +37,3 @@ clicklink.forEach(function(link) {
 });
 
 
-
-var clickCount = 0;
-var old1Img = document.getElementById('old1');
-var curHuskyText = document.getElementById('curHuskyText');
-
-old1Img.addEventListener('click', function () {
-  clickCount++;
-  if (clickCount >= 5) {
-    curHuskyText.innerHTML = '<a href="{{ ../../src/Controller/Admincontroller.php }}">Cur.Husky ©</a>';
-  }
-});
