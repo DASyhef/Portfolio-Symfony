@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UltrafooterController!{% endblock %}
+
+{% block body %}
+<style>
+ultrafooter {background-image: url("{{ asset('build/Portfolio/BG/footer.jpg') }}");}
+</style>
+
+
+<ultrafooter id="ultrafooter">
+
+<div class="gohome">
+<a href="#Home"><img src="{{ asset('build/Portfolio/icons/house.png') }}" alt="Home" class="homeicon"></a>
+<a href="#Home"><p>Accueil</p></a>
+</div>
+
+<div class="goout">
+<a href="https://linkedin.com/in/cédric-françois-8a2089272" target="_blank"><img src="{{ asset('build/Portfolio/icons/Linkedin.png') }}" alt="Linkedin" class="linksicons"></a>
+<a href="mailto:dasyhef@hotmail.fr" target="_blank"><img src="{{ asset('build/Portfolio/icons/mail.png') }}" alt="mail" class="linksicons"></a>
+<img src="{{ asset('build/Portfolio/icons/old1.png') }}" alt="Admin" class="linksicons" id="old1">
+</div>
+
+
+
+<div class="endingfooter">
+<div alt="logo" class="imgfooter" style="background-image: url('{{ asset("build/Portfolio/icons/Curhusky-Logo-Small.png") }}')"
+    onmouseover="this.style.backgroundImage='url(/build/Portfolio/icons/Curhusky-Logo-Big.png)'"></div>
+<div class="footext"><p id="curHuskyText">Cur.Husky ©</p></div>
+<div>
+</ultrafooter>
+{% endblock %}

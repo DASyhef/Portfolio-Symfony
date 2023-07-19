@@ -29,8 +29,22 @@ function navbar(event) {
   }
 }
 
+
 clickbutton.addEventListener("click", navbar);
 
 clicklink.forEach(function(link) {
   link.addEventListener("click", navbar);
+});
+
+
+
+var clickCount = 0;
+var old1Img = document.getElementById('old1');
+var curHuskyText = document.getElementById('curHuskyText');
+
+old1Img.addEventListener('click', function () {
+  clickCount++;
+  if (clickCount >= 5) {
+    curHuskyText.innerHTML = '<a href="{{ ../../src/Controller/Admincontroller.php }}">Cur.Husky ©</a>';
+  }
 });

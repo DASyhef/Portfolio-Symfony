@@ -23,6 +23,7 @@
 
 #}
 
+{% include 'navbar/index.html.twig' %}
 
 <section class="home" id="Home">
     <div>
@@ -34,9 +35,14 @@
     {% endfor %}
     #}
     </div>
+
+    <a href="#Projects"><img class="arrow invert" src="{{ asset('build/Portfolio/icons/circle-arrow-down-solid.svg') }}" alt="arrow"></a>
 </section>
 
 {% include 'Map/index.html.twig' %}
 {% include 'projects/index.html.twig' %}
 {% include 'skills/index.html.twig' %}
+{% include 'knowledge/index.html.twig' %}
+{% include 'Footer/index.html.twig' %}
+{% include 'ultrafooter/index.html.twig' %}
 {% endblock %}
