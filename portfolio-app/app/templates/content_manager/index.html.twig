@@ -4,7 +4,51 @@
 
 {% block body %}
 
-<div class="panel">
+{% include 'content_manager/navbar.html.twig' %}
+<div class="panel" id="panel">
 
 </div>
+
+<script>
+let clicklink = document.querySelectorAll(".clicklink");
+let clickbutton = document.querySelector(".round");
+let selector = document.querySelector(".rect");
+
+function navbar(event) {
+  let target = event.target.getAttribute("data-target");
+  
+  if (target) {
+    let url = "{{ path('app_ContentManagerController') }}/" + target;
+    
+    fetch(url)
+      .then(response => response.text())
+      .then(data => document.getElementById("panel").innerHTML = data);
+      
+    selector.classList.remove("on");
+    selector.classList.add("off");
+    setTimeout(function() {
+      selector.style.display = "none";
+    }, 1000);
+  } else {
+    if (selector.classList.contains("off")) {
+      selector.classList.remove("off");
+      selector.style.display = "flex";
+      selector.classList.add("on");
+    } else {
+      selector.classList.remove("on");
+      selector.classList.add("off");
+      setTimeout(function() {
+        selector.style.display = "none";
+      }, 1000);
+    }
+  }
+}
+
+clickbutton.addEventListener("click", navbar);
+
+clicklink.forEach(function(link) {
+  link.addEventListener("click", navbar);
+});
+
+</script>
 {% endblock %}

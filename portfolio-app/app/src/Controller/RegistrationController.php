@@ -35,7 +35,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
     
             // Rediriger l'utilisateur vers la page d'accueil après l'inscription réussie
-            return $this->redirectToRoute('app_login'); 
+            return $this->redirectToRoute('app_admin'); 
         }
     
         return $this->render('registration/register.html.twig', [
