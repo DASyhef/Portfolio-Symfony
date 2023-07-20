@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ContentManagerController extends AbstractController
 {
-    #[Route('/content/manager', name: 'app_ContentManagerController')]
+    #[Route('/content_manager', name: 'app_ContentManagerController')]
     public function index(): Response
     {
         return $this->render('content_manager/index.html.twig', [
