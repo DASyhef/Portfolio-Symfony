@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Knowledge{% endblock %}
+
+{% block body %}
+    <h1>Knowledge</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ knowledge.id }}</td>
+            </tr>
+            <tr>
+                <th>Knowledge</th>
+                <td>{{ knowledge.Knowledge }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_knowledges_index') }}">back to list</a>
+
+    <a href="{{ path('app_knowledges_edit', {'id': knowledge.id}) }}">edit</a>
+
+    {{ include('knowledges/_delete_form.html.twig') }}
+{% endblock %}
