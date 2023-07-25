@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Paragraf;
-use App\Repository\ParagrafRepository;
+use App\Repository\KnowledgeManagerRepository;
+use App\Repository\SkillsManagerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,16 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class SkillsController extends AbstractController
 {
     #[Route('/skills', name: 'app_skills')]
-    public function index(ParagrafRepository $paragrafRepository
+    public function index(KnowledgeManagerRepository $knowledgeManagerRepository
     ): Response
     {
 
-        $presentations = $paragrafRepository->findAll();
-//        dd($presentations);
+        $presentations = $knowledgeManagerRepository->findAll();
         
         return $this->render('skills/index.html.twig', [
             'controller_name' => 'SkillsController',
-            'paragrafs' => $presentations
+            'knowledge_managers' => $presentations
         ]);
     }
 }

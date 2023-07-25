@@ -29,17 +29,14 @@
 <section class="skills" id="Skills">
     <h1 class="title special">Compétences</h1>
 <div class="links">
+
     <div class="skillscontainer">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
+        {% for knowledge_manager in knowledge_managers %}
+            <div class="divskills">{{ knowledge_manager.SoftAndMadSkills }}</div>
         {% endfor %}
     </div> 
-     <div class="skillscontainer">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
-        {% endfor %}
-    </div> 
-    </div>
+
+</div>
     <a href="#Knowledge"><img class="arrow" src="{{ asset('build/Portfolio/icons/circle-arrow-down-solid.svg') }}" alt="arrow"></a>
 
 </section>

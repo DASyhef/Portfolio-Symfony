@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KnowledgeManager{% endblock %}
+
+{% block body %}
+    <h1>KnowledgeManager</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ knowledge_manager.id }}</td>
+            </tr>
+            <tr>
+                <th>Soft_and_Mad_Skills</th>
+                <td>{{ knowledge_manager.SoftAndMadSkills }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_knowledge_manager_index') }}">back to list</a>
+
+    <a href="{{ path('app_knowledge_manager_edit', {'id': knowledge_manager.id}) }}">edit</a>
+
+    {{ include('admin/knowledge_manager/_delete_form.html.twig') }}
+{% endblock %}

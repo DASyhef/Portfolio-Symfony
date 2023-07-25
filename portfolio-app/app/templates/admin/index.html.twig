@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
 {% block title %}Hello AdminController!{% endblock %}
 
@@ -8,15 +8,40 @@
 </style>
 
 <section class="admin">
-    {% if app.user %}
-        {# Inclure le contenu du ContentManagerController si l'utilisateur est authentifié #}
-        {% include 'content_manager/index.html.twig' %}
-    {% else %}
-        {# Afficher la page de connexion si l'utilisateur n'est pas authentifié #}
-        {% include 'security/login.html.twig' with {'last_username': last_username, 'error': error} %}
-    {% endif %}
-    <a href="{{ path('app_logout') }}" style="position: absolute; bottom: 20px; right: 20px">
-        <img src="{{ asset('build/Portfolio/icons/house.png') }}" alt="Home" class="homeicon">
-    </a>
+
+{% include 'content_manager/navbar.html.twig' %}
+
+<div class="panel" id="panel">
+  <p>Bienvenue dans la page d' Administration</p>
+</div>
+
+
 </section>
+<script>
+  let clicklink = document.querySelectorAll(".clicklink");
+  let clickbutton = document.querySelector(".round");
+  let selector = document.querySelector(".rect");
+
+  function togglePanel() {
+
+      if (selector.classList.contains("off")) {
+        selector.classList.remove("off");
+        selector.style.display = "flex";
+        selector.classList.add("on");
+      } else {
+        selector.classList.remove("on");
+        selector.classList.add("off");
+        setTimeout(function() {
+          selector.style.display = "none";
+        }, 1000);
+      }
+    }
+  
+
+  clickbutton.addEventListener("click", togglePanel);
+
+  clicklink.forEach(function(link) {
+    link.addEventListener("click", togglePanel);
+  });
+</script>
 {% endblock %}

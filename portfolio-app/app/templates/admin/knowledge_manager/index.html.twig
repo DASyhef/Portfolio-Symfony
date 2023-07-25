@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KnowledgeManager index{% endblock %}
+
+{% block body %}
+    <h1>KnowledgeManager index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Soft_and_Mad_Skills</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for knowledge_manager in knowledge_managers %}
+            <tr>
+                <td>{{ knowledge_manager.id }}</td>
+                <td>{{ knowledge_manager.SoftAndMadSkills }}</td>
+                <td>
+                    <a href="{{ path('app_knowledge_manager_show', {'id': knowledge_manager.id}) }}">show</a>
+                    <a href="{{ path('app_knowledge_manager_edit', {'id': knowledge_manager.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_knowledge_manager_new') }}">Create new</a>
+{% endblock %}

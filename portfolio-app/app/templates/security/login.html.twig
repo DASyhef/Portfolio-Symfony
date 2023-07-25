@@ -3,7 +3,11 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<style>
+    .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+</style>
 
+<section class="admin">
 <div class="panel">
     <form method="post" class="login">
         {% if error %}
@@ -24,4 +28,5 @@
         </button>
     </form>
 </div>
+</section>
 {% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SkillsManager{% endblock %}
+
+{% block body %}
+    <h1>Create new SkillsManager</h1>
+
+    {{ include('admin/skills_manager/_form.html.twig') }}
+
+    <a href="{{ path('app_skills_manager_index') }}">back to list</a>
+{% endblock %}

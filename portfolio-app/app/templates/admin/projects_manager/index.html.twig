@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProjectsManager index{% endblock %}
+
+{% block body %}
+<style>
+    .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+</style>
+
+<section class="admin">
+    <div class="panel">
+    <h1>ProjectsManager index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Projects</th>
+                <th>Name</th>
+                <th>IMG</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for projects_manager in projects_managers %}
+            <tr>
+                <td>{{ projects_manager.id }}</td>
+                <td>{{ projects_manager.Projects }}</td>
+                <td>{{ projects_manager.name }}</td>
+                <td>{{ projects_manager.IMG }}</td>
+                <td>{{ projects_manager.Description }}</td>
+                <td>
+                    <a href="{{ path('app_projects_manager_show', {'id': projects_manager.id}) }}">show</a>
+                    <a href="{{ path('app_projects_manager_edit', {'id': projects_manager.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_projects_manager_new') }}">Create new</a>
+    </div>
+    </section>
+{% endblock %}

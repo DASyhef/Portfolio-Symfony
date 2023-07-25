@@ -1,4 +1,5 @@
 <?php
+// SecurityController.php
 
 namespace App\Controller;
 
@@ -16,6 +17,11 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // Récupérer le dernier nom d'utilisateur saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
+
+        // Vérifier si l'utilisateur est déjà connecté, auquel cas on le redirige vers content_manager
+        if ($this->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('app_admin'); // Remplacez "app_content_manager" par le nom de votre route
+        }
 
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,

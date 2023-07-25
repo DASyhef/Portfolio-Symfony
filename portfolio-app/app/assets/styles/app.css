@@ -47,6 +47,7 @@ body {
     transform: scale(1);
     transition: 0.5s;
     pointer-events: all;
+    border: 1px solid rgba(255, 255, 255, 0.199);
 }
 
 .round:hover {
@@ -238,10 +239,14 @@ section {
 }
 
 .skillscontainer {
+    height: 500px;
+    width: 80%;
     margin: 20%;
     display: flex;
     flex-direction: column;
-
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
 }
 
 .divskills {
@@ -401,6 +406,12 @@ ultrafooter {
     height: 60%;
     font-family: 'Indie Flower', cursive;
     pointer-events: visible;
+    color: white;
+    font-size: 4vh;
+}
+
+.panel>p {
+    padding: 50px;
 }
 
 .login {

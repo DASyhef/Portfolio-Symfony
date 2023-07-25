@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit KnowledgeManager{% endblock %}
+
+{% block body %}
+    <h1>Edit KnowledgeManager</h1>
+
+    {{ include('knowledge_manager/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_knowledge_manager_index') }}">back to list</a>
+
+    {{ include('knowledge_manager/_delete_form.html.twig') }}
+{% endblock %}
