@@ -30,11 +30,41 @@
 <section class="projects" id="Projects">
     <h1 class="title">Projets</h1>
 
-    {# <div class="links">
-        {% for paragraf in paragrafs %}
-            <div class="divprojects">{{ paragraf.paragraf }}</div>
-        {% endfor %} #}
+    <div class="links">
+        {% for projects_manager in projects_managers %}
+            <div class="divprojects" style="position: relative; z-index: 5">
+                <div class="name">
+                    <p style="margin: 10px; font-family: 'Indie Flower', cursive;">{{projects_manager.name}}</p>
+                </div>
+                <a href="{{projects_manager.projects}}" target="_blank"><img src="{{ asset('build/Portfolio/myjob/' ~ projects_manager.imageName) }}"
+                alt="{{ projects_manager.img }}" width="100"></a>
+                <div class="description">
+                    <p style="margin: 10px; font-family: 'Indie Flower', cursive;">{{projects_manager.description}}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div> 
     <a href="#Skills"><img class="arrow invert" src="{{ asset('build/Portfolio/icons/circle-arrow-down-solid.svg') }}" alt="arrow"></a>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.divprojects');
+
+        links.forEach(link => {
+            const name = link.querySelector('.name');
+            const description = link.querySelector('.description');
+            const img = link.querySelector('img');
+
+            img.addEventListener('mouseover', function() {
+                name.style.opacity = '0.75';
+                description.style.opacity = '0.75';
+            });
+
+            img.addEventListener('mouseout', function() {
+                name.style.opacity = '0';
+                description.style.opacity = '0';
+            });
+        });
+    });
+</script>
 {% endblock %}

@@ -3,9 +3,18 @@
 {% block title %}New SkillsManager{% endblock %}
 
 {% block body %}
+    <style>
+      .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+    </style>
+
+
+<section class="admin">
+    <div class="panel" style="overflow-y: scroll;">
     <h1>Create new SkillsManager</h1>
 
     {{ include('admin/skills_manager/_form.html.twig') }}
 
     <a href="{{ path('app_skills_manager_index') }}">back to list</a>
+    </div>
+    </section>
 {% endblock %}

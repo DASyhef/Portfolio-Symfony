@@ -7,20 +7,22 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ProjectsManagerRepository;
+use App\Entity\ProjectsManager;
 
 class ProjectsController extends AbstractController
 {
-    #[Route('/projects', name: 'app_projects')]
-    public function index(//ParagrafRepository $paragrafRepository
+    #[Route('/projects', name: 'app_projects', methods: ["GET"])]
+    public function index(ProjectsManagerRepository $projectsManagerRepository
     ): Response
     {
 
-//        $presentations = $paragrafRepository->findAll();
-//        dd($presentations);
+        $projects = $projectsManagerRepository->findAll();
+
         
      return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
-//           'paragrafs' => $presentations
+            'projects_managers' => $projects
 
         ]);
     }

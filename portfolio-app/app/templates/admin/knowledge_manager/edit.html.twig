@@ -3,6 +3,13 @@
 {% block title %}Edit KnowledgeManager{% endblock %}
 
 {% block body %}
+    <style>
+      .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+    </style>
+
+
+<section class="admin">
+    <div class="panel" style="overflow-y: scroll;">
     <h1>Edit KnowledgeManager</h1>
 
     {{ include('knowledge_manager/_form.html.twig', {'button_label': 'Update'}) }}
@@ -10,4 +17,7 @@
     <a href="{{ path('app_knowledge_manager_index') }}">back to list</a>
 
     {{ include('knowledge_manager/_delete_form.html.twig') }}
+
+    </div>
+    </section>
 {% endblock %}

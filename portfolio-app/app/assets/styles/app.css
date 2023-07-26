@@ -222,6 +222,52 @@ section {
     text-align: center;
     margin: 75px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.64);
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+.divprojects:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.divprojects>a>img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 3px;
+}
+
+.name {
+    top: 0;
+    left: 0;
+}
+
+.name>p {
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.description {
+    bottom: 0;
+    right: 0;
+
+}
+
+.name,
+.description {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: auto;
+  z-index: 10;
+  background-color: black;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  display:flex;
+  position: absolute;
 }
 
 .skills {
@@ -252,7 +298,7 @@ section {
 .divskills {
     margin: 25px;    
     font-family: 'Indie Flower', cursive;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 
 .knowledge {
@@ -279,11 +325,17 @@ section {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.inrow {
+.code {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 ultrafooter {
@@ -454,12 +506,28 @@ ultrafooter {
     font-family: 'Indie Flower', cursive;
 }
 
+td {
+    font-size: 2vh;
+}
+
+th {
+    font-size: 2vh;
+}
+
 
 @media (min-width:768px) {
     .round {
         width: 75px;
         height: 75px;
     }
+
+
+    .divskills {
+        margin: 25px;    
+        font-family: 'Indie Flower', cursive;
+        font-size: 3vh;
+    }
+
 
 }
 

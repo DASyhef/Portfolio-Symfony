@@ -3,6 +3,13 @@
 {% block title %}KnowledgeManager{% endblock %}
 
 {% block body %}
+    <style>
+      .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+    </style>
+
+
+<section class="admin">
+    <div class="panel" style="overflow-y: scroll;">
     <h1>KnowledgeManager</h1>
 
     <table class="table">
@@ -23,4 +30,6 @@
     <a href="{{ path('app_knowledge_manager_edit', {'id': knowledge_manager.id}) }}">edit</a>
 
     {{ include('admin/knowledge_manager/_delete_form.html.twig') }}
+    </div>
+    </section>
 {% endblock %}

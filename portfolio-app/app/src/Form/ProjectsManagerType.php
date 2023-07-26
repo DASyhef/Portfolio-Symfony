@@ -6,6 +6,9 @@ use App\Entity\ProjectsManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
+
 
 class ProjectsManagerType extends AbstractType
 {
@@ -16,6 +19,9 @@ class ProjectsManagerType extends AbstractType
             ->add('Name')
             ->add('IMG')
             ->add('Description')
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Illustration'
+            ])
         ;
     }
 

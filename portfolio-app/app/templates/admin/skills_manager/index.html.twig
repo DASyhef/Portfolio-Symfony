@@ -3,7 +3,15 @@
 {% block title %}SkillsManager index{% endblock %}
 
 {% block body %}
-    <h1>SkillsManager index</h1>
+    <style>
+      .admin { background-image: url("{{ asset('build/Portfolio/BG/forest-old-growth-nature-green-wallpaper.jpg') }}")}
+    </style>
+    {% include 'content_manager/navbar.html.twig' %}
+
+
+<section class="admin">
+    <div class="panel" style="overflow-y: scroll;">
+    <h1>Gestion des Connaissances</h1>
 
     <table class="table">
         <thead>
@@ -34,4 +42,35 @@
     </table>
 
     <a href="{{ path('app_skills_manager_new') }}">Create new</a>
+    </section>
+        <script>
+ let clicklink = document.querySelectorAll(".clicklink");
+        let clickbutton = document.querySelector(".round");
+        let selector = document.querySelector(".rect");
+
+        function togglePanel() {
+
+            if (selector.classList.contains("off")) {
+                selector.classList.remove("off");
+                selector.style.display = "flex";
+                selector.classList.add("on");
+            } else {
+                selector.classList.remove("on");
+                selector.classList.add("off");
+                setTimeout(function() {
+                selector.style.display = "none";
+                }, 1000);
+            }
+            }
+        
+
+        clickbutton.addEventListener("click", togglePanel);
+
+        clicklink.forEach(function(link) {
+            link.addEventListener("click", togglePanel);
+        });
+
+
+
+</script>
 {% endblock %}

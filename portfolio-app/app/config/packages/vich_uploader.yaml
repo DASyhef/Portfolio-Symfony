@@ -5,7 +5,12 @@ vich_uploader:
     type: attribute
 
   mappings:
-    post_thumnail:
-      uri_prefix: /Portfolio/
-      upload_destination: "%kernel.project_dir%/public/Portfolio"
+    skills_manager:
+      uri_prefix: /Portfolio/Skills
+      upload_destination: "%kernel.project_dir%/public/build/Portfolio/Skills"
+      namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+    projects_manager:
+      uri_prefix: /Portfolio/myjob
+      upload_destination: "%kernel.project_dir%/public/build/Portfolio/myjob"
       namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

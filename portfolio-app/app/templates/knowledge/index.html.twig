@@ -30,26 +30,14 @@
     <h1 class="title">Connaissances</h1>
 
     <div class="knowledgecontainer">
-    {# <div class="code inrow">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
-        {% endfor %}
+        <div class="code">
+            {% for skills_manager in skills_managers %}
+                <div class="divskills"><img src="{{ asset('build/Portfolio/Skills/' ~ skills_manager.imageName) }}"
+                alt="{{ skills_manager.IMG }}" style="width: 60px"></div>
+            {% endfor %}
+        </div>
+    
     </div>
-    <div class="toolscode inrow">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
-        {% endfor %}
-    </div>
-    <div class="othertools inrow">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
-        {% endfor %}
-    </div>
-    <div class="os inrow">
-        {% for paragraf in paragrafs %}
-            <div class="divskills">{{ paragraf.paragraf }}</div>
-        {% endfor %}
-    </div>  #}
     <a href="#ultrafooter"><img class="arrow invert" src="{{ asset('build/Portfolio/icons/circle-arrow-down-solid.svg') }}" alt="arrow"></a>
 
 </section>

@@ -6,6 +6,8 @@ use App\Entity\SkillsManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 
 class SkillsManagerType extends AbstractType
 {
@@ -14,6 +16,9 @@ class SkillsManagerType extends AbstractType
         $builder
             ->add('Skills')
             ->add('IMG')
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Illustration'
+            ])
         ;
     }
 
