@@ -12,11 +12,11 @@
     <div class="panel" style="overflow-y: scroll;">
     <h1>Edit SkillsManager</h1>
 
-    {{ include('skills_manager/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/skills_manager/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_skills_manager_index') }}">back to list</a>
 
-    {{ include('skills_manager/_delete_form.html.twig') }}
+    {{ include('admin/skills_manager/_delete_form.html.twig') }}
 
     </div>
     </section>
